@@ -1,0 +1,90 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+<!--Start SEO blocks-->
+{% block title %}{% endblock %}
+{% block decription %}{% endblock %}
+{% block keywords %}{% endblock %}
+<!--END SEO blocks-->
+
+<!--Start CSS blocks-->
+{% block extend_header %}{% endblock %}
+<!--END CSS blocks-->
+
+<!--Start script blocks-->
+{% block extend_footer %}{% endblock %}
+<!--END script blocks-->
+
+<!--Start contact form-->
+{% block content %}  
+<section>
+  <section class="contact py-5" id="Contact">
+    <div class="container-lg py-4">
+        <div class="row justify-content-center">
+            <div class="col-lg-8"> <!--copied form internet-->
+                <div class="section-title text-center">
+                    <h3 class="fw-bold mb-5 text-danger">CONTACT</h3>
+                    <h4 class="fs-4 mb-3 text-danger">LET'S WORK TOGETHER!</h4>  <!--fs is font size--> 
+                </div>
+            </div> 
+        </div>
+          </div>
+          <div class="row">
+            <div class="col-md-5">
+                <div class=" text-danger contact-item d-flex mb-3"> <!-- d flex is is to make a allign together-->
+                     <div class="fs-4 text-danger" > 
+                        <i class="fa-solid fa-envelope "></i>
+                     </div>
+                 <div class="text ms-3"><!--ms stand for margin start gives space-->
+                         <h3 class="fs-5 text-danger">EMAIL</h3>
+                        <p class="text-muted">belacheweyerusalem@gmail.com</p>
+                 </div> 
+            </div>
+                 <div class="contact-item d-flex mb-3">
+                        <div class="icon fs-4 text-danger"> 
+                            <i class="fa-solid fa-phone"></i>
+                        </div>
+                    <div class=" text ms-3">
+                       <h3 class="fs-5 text-danger">PHONE</h3>
+                       <p class="text-muted">+251913060513</p>
+                    </div>
+                    </div>
+<!--Start map form-->
+                        <div class="mapouter"><div class="gmap_canvas"><iframe width="100%" height="290px" 
+                            id="gmap_canvas" src="https://maps.google.com/maps?q=Addis%20Ababa%204kilo%20act&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" 
+                            marginheight="0" marginwidth="0"></iframe><br><style>.mapouter{position:relative;text-align:right;
+                            height:100%;width:290px;}
+                            </style><a href="https://www.embedgooglemap.net"></a><style>.gmap_canvas {overflow:hidden;background:none!important;height:100%;
+                            width:290px;}</style></div></div> 
+<!--end contact map-->
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="lightBg">
+    <div class="container">
+        <form id="contactForm" method="POST" action="/contact/">
+        {% csrf_token %}
+            <label for="name">Name</label>
+            {{form.name}}
+
+            <label for="email">Email</label>
+            {{form.email}}
+
+            <label for="subject">Message</label>
+            {{form.message}}
+
+            <input class='btn btnPrimary text-danger' type="submit" value="Submit" class="btn btn-danger  px-3">
+           
+        </form>
+    </div>
+  </div>
+</section>
+<!--End contact form -->
+{%endblock%}
+    

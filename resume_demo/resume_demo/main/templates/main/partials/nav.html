@@ -1,0 +1,18 @@
+{% load static %}
+<header>
+<!--navbar start-->
+<nav class="navbar fixed-top bg-dark shadow-sm"> 
+    <div class="container-fluid"></div>
+    <h2 class="logo text-danger">ASTR<span class="text-light">A</span></h2> 
+            <nav class="nav"> <!--the links to the pages-->
+                <a class="nav-link text-light" href="{%url 'main:home'%}">HOME</a>
+                <a class="nav-link text-light" href="{%url 'main:portfolios' %}">ABOUT</a>
+                <a class="nav-link text-light" href="{% url 'main:blogs' %}">SERVICES</a>
+                <a class="nav-link text-light" href="{%url 'main:contact'%}">CONTACT</a>
+            </nav>
+        </div>
+</nav> 
+</header>
+<!--navbar end-->
+
+
